@@ -8,8 +8,8 @@ const errorHandler = require("./middlewares/error_handler");
 
 app.use(express.json());
 
-app.use("/", foodRoute);
 app.use("/food", foodFiltersRoute);
+app.use("/", foodRoute);
 app.use("/cuisines", cuisinesRoute);
 app.use(errorHandler);
 

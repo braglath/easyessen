@@ -11,6 +11,8 @@ module.exports = {
       totalRatings: 55,
       price: 100,
       isVeg: false,
+      isFavorite: false,
+      deliveryTime: 25,
       offers: [
         {
           percentage: 25,
@@ -29,6 +31,8 @@ module.exports = {
       totalRatings: 65,
       price: 80,
       isVeg: false,
+      isFavorite: true,
+      deliveryTime: 10,
       offers: [
         {
           percentage: 15,
@@ -47,6 +51,8 @@ module.exports = {
       totalRatings: 85,
       price: 120,
       isVeg: true,
+      isFavorite: true,
+      deliveryTime: 35,
       offers: [
         {
           percentage: 55,
@@ -65,6 +71,8 @@ module.exports = {
       totalRatings: 15,
       price: 120,
       isVeg: false,
+      isFavorite: false,
+      deliveryTime: 25,
       offers: [],
     },
     {
@@ -78,6 +86,8 @@ module.exports = {
       totalRatings: 105,
       price: 80,
       isVeg: true,
+      isFavorite: false,
+      deliveryTime: 15,
       offers: [
         {
           percentage: 25,
@@ -96,6 +106,8 @@ module.exports = {
       totalRatings: 180,
       price: 60,
       isVeg: true,
+      isFavorite: true,
+      deliveryTime: 5,
       offers: [],
     },
     {
@@ -109,6 +121,8 @@ module.exports = {
       totalRatings: 25,
       price: 160,
       isVeg: true,
+      isFavorite: false,
+      deliveryTime: 15,
       offers: [
         {
           percentage: 25,
@@ -126,6 +140,8 @@ module.exports = {
       totalRatings: 255,
       price: 45,
       isVeg: true,
+      isFavorite: true,
+      deliveryTime: 5,
       offers: [],
     },
     {
@@ -139,6 +155,8 @@ module.exports = {
       totalRatings: 243,
       price: 160,
       isVeg: false,
+      isFavorite: true,
+      deliveryTime: 45,
       offers: [
         {
           percentage: 8,
@@ -157,6 +175,8 @@ module.exports = {
       totalRatings: 185,
       price: 145,
       isVeg: true,
+      isFavorite: false,
+      deliveryTime: 15,
       offers: [],
     },
     {
@@ -170,6 +190,8 @@ module.exports = {
       totalRatings: 95,
       price: 250,
       isVeg: true,
+      isFavorite: false,
+      deliveryTime: 25,
       offers: [
         {
           percentage: 25,
@@ -188,6 +210,8 @@ module.exports = {
       totalRatings: 55,
       price: 100,
       isVeg: false,
+      isFavorite: true,
+      deliveryTime: 55,
       offers: [
         {
           percentage: 15,
@@ -206,6 +230,8 @@ module.exports = {
       totalRatings: 255,
       price: 145,
       isVeg: false,
+      isFavorite: true,
+      deliveryTime: 30,
       offers: [
         {
           percentage: 15,
@@ -224,6 +250,8 @@ module.exports = {
       totalRatings: 55,
       price: 100,
       isVeg: false,
+      isFavorite: false,
+      deliveryTime: 25,
       offers: [],
     },
     {
@@ -237,6 +265,8 @@ module.exports = {
       totalRatings: 75,
       price: 50,
       isVeg: true,
+      isFavorite: false,
+      deliveryTime: 10,
       offers: [
         {
           percentage: 5,

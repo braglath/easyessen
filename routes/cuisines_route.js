@@ -7,10 +7,11 @@ router.get("/", (req, res) => {
   res.json(cuisinesModel);
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", (req, res, next) => {
   const { id } = req.params;
   //   console.log(` cuisine id - ${id}`);
   var foodWithCuisine = foodModel.data.filter((e) => e.cuisineId == id);
+  if (foodWithCuisine.length === 0) return next({ message: "item not found" });
   res.json(foodWithCuisine);
 });
 
