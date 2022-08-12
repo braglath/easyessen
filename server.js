@@ -2,13 +2,15 @@ const express = require("express");
 const app = express();
 
 const foodRoute = require("./routes/food_route");
-const foodFiltersRoute = require("./routes/food_filters");
+const foodFiltersRoute = require("./routes/food_filters_route");
+const cuisinesRoute = require("./routes/cuisines_route");
 const errorHandler = require("./middlewares/error_handler");
 
 app.use(express.json());
 
 app.use("/", foodRoute);
 app.use("/food", foodFiltersRoute);
+app.use("/cuisines", cuisinesRoute);
 app.use(errorHandler);
 
 app.listen(5000, () => {
