@@ -8,6 +8,8 @@ module.exports = {
       name: "Chicken Wings Barbecue",
       foodType: "North Indian, Chinese",
       rating: 3.5,
+      totalRatings: 55,
+      price: 100,
       isVeg: false,
       offers: [
         {
@@ -24,6 +26,8 @@ module.exports = {
       name: "Cheese Burger with Finger Chips",
       foodType: "Fast Food, USA",
       rating: 4.5,
+      totalRatings: 65,
+      price: 80,
       isVeg: false,
       offers: [
         {
@@ -40,6 +44,8 @@ module.exports = {
       name: "Fried Roti with Paneer Butter Masala",
       foodType: "North Indian, Continental",
       rating: 4.8,
+      totalRatings: 85,
+      price: 120,
       isVeg: true,
       offers: [
         {
@@ -56,6 +62,8 @@ module.exports = {
       name: "Spicy Chicken Curry",
       foodType: "South Indian",
       rating: 4.2,
+      totalRatings: 15,
+      price: 120,
       isVeg: false,
       offers: [],
     },
@@ -67,6 +75,8 @@ module.exports = {
       name: "Chinese Noodles",
       foodType: "Chinese Special",
       rating: 3.5,
+      totalRatings: 105,
+      price: 80,
       isVeg: true,
       offers: [
         {
@@ -83,6 +93,8 @@ module.exports = {
       name: "South Indian Mini Meal",
       foodType: "South Indian, Tradition",
       rating: 4.1,
+      totalRatings: 180,
+      price: 60,
       isVeg: true,
       offers: [],
     },
@@ -94,6 +106,8 @@ module.exports = {
       name: "Juicy Pasta",
       foodType: "Fast Food, USA",
       rating: 3.8,
+      totalRatings: 25,
+      price: 160,
       isVeg: true,
       offers: [
         {
@@ -109,6 +123,8 @@ module.exports = {
       name: "Crispy Samosa",
       foodType: "North Indian, Tradition",
       rating: 3.8,
+      totalRatings: 255,
+      price: 45,
       isVeg: true,
       offers: [],
     },
@@ -120,6 +136,8 @@ module.exports = {
       name: "Juicy Chicken Leg",
       foodType: "North Indian",
       rating: 1.8,
+      totalRatings: 243,
+      price: 160,
       isVeg: false,
       offers: [
         {
@@ -136,6 +154,8 @@ module.exports = {
       name: "Gujarati Veg Roll",
       foodType: "North Indian, Traditional",
       rating: 4.1,
+      totalRatings: 185,
+      price: 145,
       isVeg: true,
       offers: [],
     },
@@ -147,6 +167,8 @@ module.exports = {
       name: "Hot Spicy Pasta",
       foodType: "Chinese",
       rating: 2.8,
+      totalRatings: 95,
+      price: 250,
       isVeg: true,
       offers: [
         {
@@ -163,6 +185,8 @@ module.exports = {
       name: "Soft Beef Curry",
       foodType: "Street Food, USA",
       rating: 3.5,
+      totalRatings: 55,
+      price: 100,
       isVeg: false,
       offers: [
         {
@@ -179,6 +203,8 @@ module.exports = {
       name: "Prawn Pakoda",
       foodType: "South Indian Special",
       rating: 3.8,
+      totalRatings: 255,
+      price: 145,
       isVeg: false,
       offers: [
         {
@@ -195,6 +221,8 @@ module.exports = {
       name: "Egyptian Egg Balls",
       foodType: "Fried Special",
       rating: 3.5,
+      totalRatings: 55,
+      price: 100,
       isVeg: false,
       offers: [],
     },
@@ -206,6 +234,8 @@ module.exports = {
       name: "Veg Frankie",
       foodType: "North Indian, Sides",
       rating: 3.5,
+      totalRatings: 75,
+      price: 50,
       isVeg: true,
       offers: [
         {
