@@ -13,10 +13,11 @@ module.exports = {
       isVeg: false,
       isFavorite: false,
       deliveryTime: 25,
+      menu: 4,
       offers: [
         {
           percentage: 25,
-          couponeCode: "ASE25",
+          couponeCode: "EASY25",
         },
       ],
     },
@@ -33,10 +34,11 @@ module.exports = {
       isVeg: false,
       isFavorite: true,
       deliveryTime: 10,
+      menu: 1,
       offers: [
         {
           percentage: 15,
-          couponeCode: "USA15",
+          couponeCode: "EASY15",
         },
       ],
     },
@@ -53,6 +55,7 @@ module.exports = {
       isVeg: true,
       isFavorite: true,
       deliveryTime: 35,
+      menu: 2,
       offers: [
         {
           percentage: 55,
@@ -73,6 +76,7 @@ module.exports = {
       isVeg: false,
       isFavorite: false,
       deliveryTime: 25,
+      menu: 4,
       offers: [],
     },
     {
@@ -88,6 +92,7 @@ module.exports = {
       isVeg: true,
       isFavorite: false,
       deliveryTime: 15,
+      menu: 3,
       offers: [
         {
           percentage: 25,
@@ -108,6 +113,7 @@ module.exports = {
       isVeg: true,
       isFavorite: true,
       deliveryTime: 5,
+      menu: 1,
       offers: [],
     },
     {
@@ -123,6 +129,7 @@ module.exports = {
       isVeg: true,
       isFavorite: false,
       deliveryTime: 15,
+      menu: 2,
       offers: [
         {
           percentage: 25,
@@ -142,6 +149,7 @@ module.exports = {
       isVeg: true,
       isFavorite: true,
       deliveryTime: 5,
+      menu: 3,
       offers: [],
     },
     {
@@ -157,6 +165,7 @@ module.exports = {
       isVeg: false,
       isFavorite: true,
       deliveryTime: 45,
+      menu: 1,
       offers: [
         {
           percentage: 8,
@@ -177,6 +186,7 @@ module.exports = {
       isVeg: true,
       isFavorite: false,
       deliveryTime: 15,
+      menu: 4,
       offers: [],
     },
     {
@@ -192,6 +202,7 @@ module.exports = {
       isVeg: true,
       isFavorite: false,
       deliveryTime: 25,
+      menu: 2,
       offers: [
         {
           percentage: 25,
@@ -212,6 +223,7 @@ module.exports = {
       isVeg: false,
       isFavorite: true,
       deliveryTime: 55,
+      menu: 1,
       offers: [
         {
           percentage: 15,
@@ -232,6 +244,7 @@ module.exports = {
       isVeg: false,
       isFavorite: true,
       deliveryTime: 30,
+      menu: 4,
       offers: [
         {
           percentage: 15,
@@ -252,6 +265,7 @@ module.exports = {
       isVeg: false,
       isFavorite: false,
       deliveryTime: 25,
+      menu: 3,
       offers: [],
     },
     {
@@ -267,6 +281,7 @@ module.exports = {
       isVeg: true,
       isFavorite: false,
       deliveryTime: 10,
+      menu: 3,
       offers: [
         {
           percentage: 5,

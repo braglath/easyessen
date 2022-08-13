@@ -1,20 +1,20 @@
-const express = require("express");
-const app = express();
+require("dotenv").config();
+const app = require("./app");
 
-const foodRoute = require("./routes/food_route");
-const foodFiltersRoute = require("./routes/food_filters_route");
-const cuisinesRoute = require("./routes/cuisines_route");
-const errorHandler = require("./middlewares/error_handler");
+const mysql = require("./config/mysql_config");
 
-app.use(express.json());
+const port = process.env.port;
 
-app.use("/food", foodFiltersRoute);
-app.use("/", foodRoute);
-app.use("/cuisines", cuisinesRoute);
-app.use(errorHandler);
-
-app.listen(5000, () => {
-  console.log(
-    "- Sever listening on http://localhost:5000 or http://13.126.10.179:5000"
-  );
+mysql.connect(function (err) {
+  if (err) {
+    console.log(`sql database connection error ~ ${err}`);
+    return;
+    // throw err;
+  }
+  // server will only start if db is connected
+  app.listen(port, () => {
+    console.log(
+      `- Sever listening on http://localhost:${port} or http://13.126.10.179:${port}`
+    );
+  });
 });
