@@ -6,6 +6,7 @@ module.exports = function (req, res, next) {
     email: "required|email",
     phonenumber: "required|string|international",
     password: "required|string|min:6|strict",
+    profile_image: "required|string|url",
     latitude: "required|numeric",
     longitude: "required|numeric",
     device_token: "required|string",
