@@ -63,3 +63,85 @@ exports.getUserId = function (params, callback) {
     callback(null, userID);
   });
 };
+
+exports.addTokensToTable = function (params, callback) {
+  const userId = params["userId"];
+  const device_token = params["device_token"];
+  const access_token = params["access_token"];
+  const refresh_token = params["refresh_token"];
+
+  const sqlQuery = `
+  INSERT INTO tokens (user_id,device_token,access_token,refresh_token) 
+  VALUES ('${userId}','${device_token}','${access_token}','${refresh_token}')
+  `;
+
+  mysql.query(sqlQuery, function (err, result) {
+    if (err) return callback({ message: err.message }, null);
+    //? else
+    callback(null, "passed");
+  });
+};
+
+exports.saveGeoLocationToTable = function (params, callback) {
+  const userId = params["userId"];
+  const latitude = params["latitude"];
+  const longitude = params["longitude"];
+
+  const sqlQuery = `
+  INSERT INTO geo_location (user_id,latitude,longitude) 
+  VALUES ('${userId}','${latitude}','${longitude}')
+  `;
+
+  mysql.query(sqlQuery, function (err, result) {
+    if (err) return callback({ message: err.message });
+    //? else
+    callback(null, "passed");
+  });
+};
+
+exports.getUserDetailsFromTable = function (params, callback) {
+  const userId = params["userId"];
+  const email = params["email"];
+  const phonenumber = params["phonenumber"];
+
+  const sqlQuery = `
+  SELECT * FROM user
+  WHERE user_id  = '${userId}' AND email = '${email}' AND phonenumber = '${phonenumber}'
+  `;
+
+  mysql.query(sqlQuery, function (err, result) {
+    if (err) return callback({ message: err.message }, null);
+    //? else
+    console.log(`fullname : ${result[0]["full_name"]}`);
+    callback(null, result[0]);
+  });
+};
+
+exports.getTokensFromTable = function (params, callback) {
+  const userId = params["userId"];
+
+  const sqlQuery = `
+  SELECT * FROM tokens
+  WHERE user_id = '${userId}'
+  `;
+  mysql.query(sqlQuery, function (err, result) {
+    if (err) return callback({ message: err.message });
+    //? else
+    callback(null, result[0]);
+  });
+};
+
+exports.getGeoLocationFromTable = function (params, callback) {
+  const userId = params["userId"];
+
+  const sqlQuery = `
+  SELECT * FROM geo_location
+  WHERE user_id = '${userId}'
+  `;
+
+  mysql.query(sqlQuery, function (err, result) {
+    if (err) return callback({ message: err.message });
+    //? else
+    callback(null, result[0]);
+  });
+};

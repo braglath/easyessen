@@ -52,9 +52,63 @@ exports.generateAndSaveToken = function (req, res, next) {
     if (err)
       return next({ message: "error generating token but user details saved" });
     //? else
-    console.log(result["access_token"]);
-    console.log(result["refresh_token"]);
     //? save the token and device token in db
+    const params = {
+      userId: req.userId,
+      device_token: req.body.device_token,
+      access_token: result["access_token"],
+      refresh_token: result["refresh_token"],
+    };
+    registrationServices.addTokensToTable(params, function (err, result) {
+      if (err) return next({ message: err });
+      //? else
+      next();
+    });
+  });
+};
+
+exports.saveUserLocation = function (req, res, next) {
+  const params = {
+    userId: req.userId,
+    latitude: req.body.latitude,
+    longitude: req.body.longitude,
+  };
+
+  registrationServices.saveGeoLocationToTable(params, function (err, result) {
+    if (err) return next({ message: err });
+    //? else
     next();
+  });
+};
+
+exports.getUserDetails = function (req, res, next) {
+  const params = {
+    userId: req.userId,
+    email: req.body.email,
+    phonenumber: req.body.phonenumber,
+  };
+
+  registrationServices.getUserDetailsFromTable(params, function (err, result) {
+    if (err) return next({ message: err });
+    //? else
+    req.userDetails = result; //? saving the user details table to req
+    const params = { userId: req.userId };
+    registrationServices.getTokensFromTable(params, function (err, result) {
+      if (err) return next({ message: err });
+      //? else
+      req.userTokens = result; //? saving all user tokens table to req
+      const params = { userId: req.userId };
+
+      registrationServices.getGeoLocationFromTable(
+        params,
+        function (err, result) {
+          if (err) return next({ message: err });
+          //? else
+          req.userGeoLocation = result;
+          //? send all details as json
+          next();
+        }
+      );
+    });
   });
 };
