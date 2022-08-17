@@ -3,9 +3,10 @@ module.exports = (req, res, next) => {
   const userTokens = req.userTokens;
   const geoLocation = req.userGeoLocation;
 
+//   console.log(`controller - ${userDetails}`);
 
   res.json({
-    message: "Registered Successfully",
+    message: "Logged-in Successfully",
     data: {
       token: {
         access_token: userTokens["access_token"],

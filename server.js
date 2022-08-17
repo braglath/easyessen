@@ -13,6 +13,7 @@ mysql.connect(function (err) {
   }
   // server will only start if db is connected
   app.listen(port, () => {
+    console.log("database connected");
     console.log(
       `- Sever listening on http://localhost:${port} or http://13.126.10.179:${port}`
     );

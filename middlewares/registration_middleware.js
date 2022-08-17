@@ -27,9 +27,8 @@ exports.saveUserDetails = function (req, res, next) {
     full_name: req.body.fullname,
     email: req.body.email,
     phonenumber: req.body.phonenumber,
-    password: req.body.password,
+    password: req.hashedPassword,
     profile_image: req.body.profile_image,
-    profile_image: req.body.email,
     created_on: new Date().toISOString().slice(0, -1),
   };
 
@@ -41,7 +40,7 @@ exports.saveUserDetails = function (req, res, next) {
       if (err) return next({ message: err });
       //? else
       req.userId = result;
-      console.log(result);
+      // console.log(result);
       next();
     });
   });

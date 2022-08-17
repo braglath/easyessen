@@ -6,6 +6,7 @@ const app = express();
 /// file imports
 ///
 const registrationRoute = require("./routes/registration_route");
+const loginRoute = require("./routes/login_route");
 const foodRoute = require("./routes/food_route");
 const menuRoute = require("./routes/menu_route");
 const foodFiltersRoute = require("./routes/food_filters_route");
@@ -20,6 +21,7 @@ app.use(express.json());
 /// routes
 ///
 app.use("/user/registration", registrationRoute);
+app.use("/user/login", loginRoute);
 app.use("/food", foodFiltersRoute);
 app.use("/food/menu", menuRoute);
 app.use("/", foodRoute);

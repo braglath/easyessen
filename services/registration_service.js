@@ -112,7 +112,7 @@ exports.getUserDetailsFromTable = function (params, callback) {
   mysql.query(sqlQuery, function (err, result) {
     if (err) return callback({ message: err.message }, null);
     //? else
-    console.log(`fullname : ${result[0]["full_name"]}`);
+    // console.log(`fullname : ${result[0]["full_name"]}`);
     callback(null, result[0]);
   });
 };
