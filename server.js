@@ -3,7 +3,8 @@ const app = require("./app");
 
 const mysql = require("./config/mysql_config");
 
-const port = process.env.PORT || process.env.port;
+const port = 5000;
+// const port = process.env.PORT || process.env.port;
 
 mysql.connect(function (err) {
   if (err) {
