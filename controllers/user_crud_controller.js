@@ -3,7 +3,7 @@ module.exports = function (req, res, next) {
   const userTokens = req.userTokens;
   const geoLocation = req.userGeoLocation;
 
-  // console.log(userTokens["access_token"]);
+//   console.log(userTokens["access_token"]);
 
   res.json({
     message: "Logged-in Successfully",

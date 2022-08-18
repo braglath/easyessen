@@ -40,6 +40,7 @@ exports.generateAndSaveToken = (req, res, next) => {
       access_token: result["access_token"],
       refresh_token: result["refresh_token"],
     };
+
     loginService.saveTokenToTable(params, function (err, result) {
       if (err) return next({ message: err.message });
       //? else token table updated

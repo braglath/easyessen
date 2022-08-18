@@ -12,16 +12,22 @@ const menuRoute = require("./routes/menu_route");
 const foodFiltersRoute = require("./routes/food_filters_route");
 const cuisinesRoute = require("./routes/cuisines_route");
 const errorHandler = require("./middlewares/error_handler");
+const checkTokenExists = require("./middlewares/jwt_verify_middleware");
+const userCRUD = require("./routes/user_crud_route");
 
 /// server essentials
 ///
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-/// routes
 ///
+/// routes
+///routes that do not need token
 app.use("/user/registration", registrationRoute);
 app.use("/user/login", loginRoute);
+/// check if token exists and token expired or not
+app.use(checkTokenExists);
+/// routes that need token
+app.use("/user", userCRUD);
 app.use("/food", foodFiltersRoute);
 app.use("/food/menu", menuRoute);
 app.use("/", foodRoute);

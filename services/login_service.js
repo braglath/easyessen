@@ -48,7 +48,7 @@ exports.saveTokenToTable = function (params, callback) {
   const sqlQuery = `
   UPDATE tokens
   SET access_token = '${access_token}', refresh_token = '${refresh_token}'
-  WHERE token_id = '${userId}'
+  WHERE user_id = '${userId}'
   `;
 
   mysql.query(sqlQuery, function (err, result) {
