@@ -3,10 +3,10 @@ module.exports = (req, res, next) => {
   const userTokens = req.userTokens;
   const geoLocation = req.userGeoLocation;
 
-
   res.json({
     message: "Registered Successfully",
     data: {
+      user_id: userDetails["user_id"],
       token: {
         access_token: userTokens["access_token"],
         refresh_token: userTokens["refresh_token"],

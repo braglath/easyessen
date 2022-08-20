@@ -8,6 +8,7 @@ module.exports = function (req, res, next) {
   res.json({
     message: "Logged-in Successfully",
     data: {
+      user_id: userDetails["user_id"],
       token: {
         access_token: userTokens["access_token"],
         refresh_token: userTokens["refresh_token"],
