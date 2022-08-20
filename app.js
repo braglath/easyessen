@@ -11,6 +11,7 @@ const foodRoute = require("./routes/food_route");
 const menuRoute = require("./routes/menu_route");
 const foodFiltersRoute = require("./routes/food_filters_route");
 const cuisinesRoute = require("./routes/cuisines_route");
+const changePasswordRoute = require("./routes/change_password_route");
 const errorHandler = require("./middlewares/error_handler");
 const checkTokenExists = require("./middlewares/jwt_verify_middleware");
 const userCRUD = require("./routes/user_crud_route");
@@ -28,6 +29,7 @@ app.use("/user/login", loginRoute);
 app.use(checkTokenExists);
 /// routes that need token
 app.use("/user", userCRUD);
+app.use("/user/change-password", changePasswordRoute);
 app.use("/food", foodFiltersRoute);
 app.use("/food/menu", menuRoute);
 app.use("/", foodRoute);
