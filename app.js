@@ -5,7 +5,6 @@ const app = express();
 
 /// file imports
 ///
-const addFoodRoute = require("./routes/add_food_route");
 const registrationRoute = require("./routes/registration_route");
 const loginRoute = require("./routes/login_route");
 const foodRoute = require("./routes/food_route");
@@ -25,17 +24,16 @@ app.use(express.json());
 ///
 /// routes
 ///routes that do not need token
-app.use("/food/add", addFoodRoute);
 app.use("/user/registration", registrationRoute);
 app.use("/user/login", loginRoute);
+app.use("/food", foodFiltersRoute);
+app.use("/food/menu", menuRoute);
+app.use("/", foodRoute);
 /// check if token exists and token expired or not
 app.use(checkTokenExists);
 /// routes that need token
 app.use("/user", userCRUD);
 app.use("/user/change-password", changePasswordRoute);
-app.use("/food", foodFiltersRoute);
-app.use("/food/menu", menuRoute);
-app.use("/", foodRoute);
 app.use("/cuisines", cuisinesRoute);
 app.use("/cart", cartRoute);
 app.use(errorHandler);

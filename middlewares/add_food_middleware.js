@@ -61,7 +61,11 @@ exports.updateMenu = (req, res, next) => {
 };
 
 exports.updateOffer = (req, res, next) => {
-  const { offer_id } = req.body;
+  let { offer_id } = req.body;
+
+  if (offer_id == null) {
+    offer_id = 21;
+  }
 
   const params = {
     food_id: req.food_id,
