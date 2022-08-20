@@ -5,12 +5,14 @@ const app = express();
 
 /// file imports
 ///
+const addFoodRoute = require("./routes/add_food_route");
 const registrationRoute = require("./routes/registration_route");
 const loginRoute = require("./routes/login_route");
 const foodRoute = require("./routes/food_route");
 const menuRoute = require("./routes/menu_route");
 const foodFiltersRoute = require("./routes/food_filters_route");
 const cuisinesRoute = require("./routes/cuisines_route");
+const cartRoute = require("./routes/cart_route");
 const changePasswordRoute = require("./routes/change_password_route");
 const errorHandler = require("./middlewares/error_handler");
 const checkTokenExists = require("./middlewares/jwt_verify_middleware");
@@ -23,6 +25,7 @@ app.use(express.json());
 ///
 /// routes
 ///routes that do not need token
+app.use("/food/add", addFoodRoute);
 app.use("/user/registration", registrationRoute);
 app.use("/user/login", loginRoute);
 /// check if token exists and token expired or not
@@ -34,6 +37,7 @@ app.use("/food", foodFiltersRoute);
 app.use("/food/menu", menuRoute);
 app.use("/", foodRoute);
 app.use("/cuisines", cuisinesRoute);
+app.use("/cart", cartRoute);
 app.use(errorHandler);
 
 module.exports = app;
