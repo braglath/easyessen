@@ -8,7 +8,11 @@ const foodController = require("../controllers/food_controller");
 
 router
   .route("/food")
-  .get(foodMiddleware.getAllFoods, foodController)
+  .get(
+    foodMiddleware.getAllFoods,
+    foodMiddleware.changeFoodModel, //? change model and paginate
+    foodController
+  )
   .post(
     //? add new food
     addFoodMiddleware.addFood,
