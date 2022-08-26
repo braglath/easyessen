@@ -12,6 +12,7 @@ const menuRoute = require("./routes/menu_route");
 const foodFiltersRoute = require("./routes/food_filters_route");
 const cuisinesRoute = require("./routes/cuisines_route");
 const cartRoute = require("./routes/cart_route");
+const stripePaymentRoute = require("./routes/stripe_payment_route");
 const changePasswordRoute = require("./routes/change_password_route");
 const errorHandler = require("./middlewares/error_handler");
 const checkTokenExists = require("./middlewares/jwt_verify_middleware");
@@ -29,6 +30,7 @@ app.use("/user/login", loginRoute);
 app.use("/food", foodFiltersRoute);
 app.use("/food/menu", menuRoute);
 app.use("/", foodRoute);
+app.use("/stripe-payment", stripePaymentRoute);
 /// check if token exists and token expired or not
 app.use(checkTokenExists);
 /// routes that need token
